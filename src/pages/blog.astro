@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+import TestContent from '../test/test.md';
+---
+
+<Layout>
+  <body>
+    <h2>Blog</h2>
+    <p>This is the blog page. It will contain a list of all the blog posts.</p>
+    <ul>
+      <li><a href=`${base}/posts/post-x`>Post 1</a></li>
+      <li><a href=`${base}/posts/post-y`>Post 2</a></li>
+      <li><a href=`${base}/posts/post-z`>Post 3</a></li>
+    </ul>
+    <TestContent />
+  </body>
+</Layout>
