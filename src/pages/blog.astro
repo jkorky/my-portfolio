@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
-import TestContent from '../test/test.md';
+const { Content } = await import('../test/test.md');
 ---
 
 <Layout>
@@ -13,6 +13,6 @@ import TestContent from '../test/test.md';
       <li><a href=`${base}/posts/post-y`>Post 2</a></li>
       <li><a href=`${base}/posts/post-z`>Post 3</a></li>
     </ul>
-    <TestContent />
+    <Content />
   </body>
 </Layout>
