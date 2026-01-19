@@ -1,0 +1,33 @@
+@use '../../styles/tokens' as tokens;
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: tokens.$measureSpace200;
+  padding-right: tokens.$measureSpace200;
+}
+
+@include tokens.breakpoint-up('tablet') {
+  .container {
+    max-width: tokens.container('tablet');
+    padding-left: tokens.$measureSpace300;
+    padding-right: tokens.$measureSpace300;
+  }
+}
+
+@include tokens.breakpoint-up('desktop') {
+  .container {
+    max-width: tokens.container('desktop');
+    padding-left: tokens.$measureSpace400;
+    padding-right: tokens.$measureSpace400;
+  }
+}
+
+@include tokens.breakpoint-up('desktop-lg') {
+  .container {
+    max-width: tokens.container('desktop-lg');
+    padding-left: tokens.$measureSpace500;
+    padding-right: tokens.$measureSpace500;
+  }
+}
