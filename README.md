@@ -1,46 +1,43 @@
-# Astro Starter Kit: Basics
+## My Portfolio
 
-```sh
-yarn create astro@latest -- --template basics
+Personal portfolio and blog built with [Astro](https://astro.build).  
+It is a place to share selected work, small experiments, and notes about things I am interested in.
+
+I chose Astro because it can be easily deployed to GitHub Pages.
+
+## Getting Started
+
+```bash
+# Install dependencies
+yarn install
+
+# Start dev server
+yarn dev
+
+# Build for production
+yarn build
+
+# Preview production build
+yarn preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Linting
 
-## 🚀 Project Structure
+```bash
+# Check
+yarn lint
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+# Auto-fix where possible
+yarn lint:fix
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+ESLint is configured in `eslint.config.mjs`.
 
-## 🧞 Commands
+## Docs
 
-All commands are run from the root of the project, from a terminal:
+Extra notes about how this project is set up in the `docs/` folder:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
+- [`docs/figma-and-tokens.md`](docs/figma-and-tokens.md) – Figma setup, design tokens, Supernova
+- [`docs/layout-and-grid.md`](docs/layout-and-grid.md) – layout, breakpoints, and grid decisions
+- [`docs/typography-and-icons.md`](docs/typography-and-icons.md) – font and icon choices
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
