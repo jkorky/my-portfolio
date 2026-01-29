@@ -1,8 +1,10 @@
+@use '../tokens/measures' as measures;
+
 $breakpoints: (
-  'mobile': 320px,
-  'tablet': 768px,
-  'desktop': 1024px,
-  'desktop-lg': 1280px,
+  'mobile': measures.$measureDimensionMobile,
+  'tablet': measures.$measureDimensionTablet,
+  'desktop': measures.$measureDimensionDesktop,
+  'desktop-lg': measures.$measureDimensionDesktopLg,
 );
 
 $containers: (
