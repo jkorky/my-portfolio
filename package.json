@@ -8,15 +8,20 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .astro,.js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .astro,.js,.jsx,.ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .astro,.js,.jsx,.ts,.tsx --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "5.16.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
     "@typescript-eslint/parser": "8.50.0",
     "eslint": "9.39.2",
     "eslint-plugin-astro": "1.5.0",
+    "husky": "^9.1.7",
+    "pinst": "^3.0.0",
     "sass": "1.97.2"
   }
 }
