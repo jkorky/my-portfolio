@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@lucide/astro": "^0.576.0",
     "astro": "5.16.6"
   },
   "devDependencies": {
