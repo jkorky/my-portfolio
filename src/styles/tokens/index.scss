@@ -1,7 +1,6 @@
-@forward "colors";
-@forward "measures";
-@forward "breakpoints";
-@forward "borders";
-@forward "gradients";
-@forward "shadows";
-@forward "typography";
+@import "colors";
+@import "measures";
+@import "borders";
+@import "gradients";
+@import "shadows";
+@import "typography";
