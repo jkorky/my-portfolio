@@ -1,0 +1,30 @@
+@use '../../styles/tokens' as tokens;
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: tokens.$measureSpace200 0;
+
+  a {
+    color: tokens.$colorTextDefault;
+    text-decoration: none;
+
+    &:hover {
+      color: tokens.$colorGrey200;
+    }
+
+    &:active {
+      color: tokens.$colorGrey300;
+    }
+  }
+}
+
+.Navbar__links {
+  display: flex;
+  gap: tokens.$measureSpace200;
+
+  a {
+    font-size: tokens.$measureFontSize300;
+  }
+}

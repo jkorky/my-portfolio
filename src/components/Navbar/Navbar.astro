@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components';
+import styles from './Navbar.module.scss';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<nav class={styles.Navbar}>
+  <a href={base} aria-label="Home">
+    <Icon name="logo" width={48} height={48} />
+  </a>
+  <div class={styles.Navbar__links}>
+    <a href={`${base}/blog`}>Blog</a>
+  </div>
+</nav>

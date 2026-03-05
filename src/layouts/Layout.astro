@@ -1,6 +1,7 @@
 ---
+import '../styles/global.scss';
 import Container from '../components/Container/Container.astro';
-import Navbar from '../components/Navbar.astro';
+import Navbar from '../components/Navbar/Navbar.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -10,6 +11,11 @@ const base = import.meta.env.BASE_URL;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=jetbrains-mono:100,300" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>

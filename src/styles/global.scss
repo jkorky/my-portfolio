@@ -1,0 +1,7 @@
+@use './tokens' as tokens;
+
+body {
+  color: tokens.$colorTextDefault;
+  font-family: tokens.$typographyBodyFontFamily;
+  font-weight: 300;
+}

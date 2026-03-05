@@ -1,0 +1,8 @@
+@use '../../styles/tokens' as tokens;
+
+.About__photo {
+  width: 294px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

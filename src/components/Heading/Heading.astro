@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import styles from './Heading.module.scss';
+
+interface Props extends HTMLAttributes<'h1'> {
+  as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  weight?: number;
+}
+
+const { as: Tag, weight, class: className, ...rest } = Astro.props;
+---
+<Tag
+  class:list={[styles.Heading, className]}
+  style={weight !== undefined ? { fontWeight: weight } : undefined}
+  {...rest}
+>
+  <slot />
+</Tag>

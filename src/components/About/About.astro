@@ -1,13 +1,22 @@
 ---
+import { Image } from 'astro:assets';
 import { ChevronDown } from '@lucide/astro';
-import { Icon } from 'astro-icon/components';
+import meImage from '../../assets/me.png';
+import Heading from '../Heading/Heading.astro';
+import styles from './About.module.scss';
 ---
 
 <body>
-  <h1>About Me</h1>
+  <Image
+    src={meImage}
+    width={294}
+    height={294}
+    alt="Ján Korkoš"
+    class={styles.About__photo}
+  />
+  <Heading as="h1">Ján Korkoš</Heading>
   <h2>... and my new Astro site!</h2>
 
-  <Icon name="logo"/>
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
   <ChevronDown size={48} />
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
