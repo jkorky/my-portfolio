@@ -55,7 +55,8 @@ export default [
       'node_modules/**',
       '.astro/**',
       '*.config.mjs',
-      '*.config.js'
+      '*.config.js',
+      'env.d.ts'
     ]
   }
 ];

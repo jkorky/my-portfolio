@@ -1,1 +1,6 @@
+$typographyHeadingFontFamily: 'Bodoni Moda', serif;
+$typographyHeadingLetterSpacing: -0.08em;
+$typographyBodyFontFamily: 'JetBrains Mono', monospace;
 
+/** Optimal line length for body text: 50–75 ch, ~66 ch sweet spot (JetBrains Mono) */
+$typographyProseMaxWidth: 65ch;

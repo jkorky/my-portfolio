@@ -1,0 +1,16 @@
+@use '../../styles/tokens' as tokens;
+
+.Heading {
+  font-family: tokens.$typographyHeadingFontFamily;
+  letter-spacing: tokens.$typographyHeadingLetterSpacing;
+  font-weight: 400;
+  margin: 0;
+  margin-block: 0.5em 0.25em;
+}
+
+h1.Heading { font-size: tokens.$measureFontSize900; }
+h2.Heading { font-size: tokens.$measureFontSize800; }
+h3.Heading { font-size: tokens.$measureFontSize700; }
+h4.Heading { font-size: tokens.$measureFontSize600; }
+h5.Heading { font-size: tokens.$measureFontSize500; }
+h6.Heading { font-size: tokens.$measureFontSize300; }

@@ -1,0 +1,11 @@
+@use '../../styles/tokens' as tokens;
+
+.Prose {
+  max-width: tokens.$typographyProseMaxWidth;
+  margin-inline: auto;
+  margin-block-start: 1.5em;
+
+  > * + * {
+    margin-block-start: 1em;
+  }
+}
