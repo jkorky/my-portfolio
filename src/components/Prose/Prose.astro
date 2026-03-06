@@ -1,0 +1,20 @@
+---
+import styles from './Prose.module.scss';
+
+interface Props {
+  tag?: 'section' | 'article' | 'div';
+  id?: string;
+  labelledBy?: string;
+  class?: string;
+}
+
+const { tag: Tag = 'div', id, labelledBy, class: className } = Astro.props;
+---
+
+<Tag
+  id={id}
+  class:list={[styles.Prose, className]}
+  aria-labelledby={labelledBy ?? undefined}
+>
+  <slot />
+</Tag>

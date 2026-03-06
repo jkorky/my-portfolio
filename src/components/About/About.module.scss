@@ -1,8 +1,22 @@
 @use '../../styles/tokens' as tokens;
 
+.About {
+  text-align: center;
+}
+
 .About__photo {
   width: 294px;
   max-width: 100%;
   height: auto;
   display: block;
+  margin-inline: auto;
+}
+
+.About__name {
+  line-height: 0.9;
+}
+
+.About__job {
+  margin-block: 0 2em;
+  font-size: 1em;
 }

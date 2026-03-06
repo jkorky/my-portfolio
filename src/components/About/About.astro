@@ -1,23 +1,25 @@
 ---
 import { Image } from 'astro:assets';
-import { ChevronDown } from '@lucide/astro';
 import meImage from '../../assets/me.png';
 import Heading from '../Heading/Heading.astro';
+import Prose from '../Prose/Prose.astro';
 import styles from './About.module.scss';
 ---
 
-<body>
+<main class={styles.About}>
   <Image
     src={meImage}
     width={294}
     height={294}
-    alt="Ján Korkoš"
+    alt="Photo of Ján Korkoš"
     class={styles.About__photo}
   />
-  <Heading as="h1">Ján Korkoš</Heading>
-  <h2>... and my new Astro site!</h2>
+  <Heading as="h1" class={styles.About__name} id="about-heading">Ján Korkoš</Heading>
+  <p class={styles.About__job}>Frontend developer</p>
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-  <ChevronDown size={48} />
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-</body>
+  <Prose tag="section">
+    <p>Hi, I'm Ján. I'm a software developer focused mainly on frontend development and modern web applications.</p>
+    <p>After finishing my studies I moved to Prague, where I worked at Alma Career on the product Atmoskop as a full-stack developer with a strong focus on frontend.</p>
+    <p>Outside of work I enjoy learning and building things in different ways. I love swing dancing and regularly attend international festivals. I also enjoy photography, experimenting with small electronics projects using Arduino and ESP boards, and taking care of plants or growing them from seeds.</p>
+  </Prose>
+</main>
