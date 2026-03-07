@@ -1,6 +1,7 @@
 @use '../../styles/tokens' as tokens;
 
-.Heading {
+/* Use :where() so passed-in classes (e.g. from parent) can override these defaults */
+:where(.Heading) {
   font-family: tokens.$typographyHeadingFontFamily;
   letter-spacing: tokens.$typographyHeadingLetterSpacing;
   font-weight: 400;
@@ -8,9 +9,9 @@
   margin-block: 0.5em 0.25em;
 }
 
-h1.Heading { font-size: tokens.$measureFontSize900; }
-h2.Heading { font-size: tokens.$measureFontSize800; }
-h3.Heading { font-size: tokens.$measureFontSize700; }
-h4.Heading { font-size: tokens.$measureFontSize600; }
-h5.Heading { font-size: tokens.$measureFontSize500; }
-h6.Heading { font-size: tokens.$measureFontSize300; }
+:where(h1.Heading) { font-size: tokens.$measureFontSize900; }
+:where(h2.Heading) { font-size: tokens.$measureFontSize800; }
+:where(h3.Heading) { font-size: tokens.$measureFontSize700; }
+:where(h4.Heading) { font-size: tokens.$measureFontSize600; }
+:where(h5.Heading) { font-size: tokens.$measureFontSize500; }
+:where(h6.Heading) { font-size: tokens.$measureFontSize300; }

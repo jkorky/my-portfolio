@@ -9,5 +9,8 @@ export default defineConfig({
   base: '/my-portfolio',
   integrations: [icon({
     iconDir: 'src/assets/icons',
+    include: {
+      lucide: ["instagram", "linkedin", "github"],
+    },
   })],
 });

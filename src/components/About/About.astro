@@ -9,17 +9,19 @@ import styles from './About.module.scss';
 <main class={styles.About}>
   <Image
     src={meImage}
-    width={294}
-    height={294}
+    width={200}
+    height={200}
+    loading="eager"
+    layout="fixed"
+    priority
     alt="Ján Korkoš"
     class={styles.About__photo}
-    loading="eager"
   />
   <Heading as="h1" class={styles.About__name} id="about-heading">Ján Korkoš</Heading>
   <div class={styles.About__job}>Frontend developer</div>
 
   <Prose tag="section">
-    <p>Hi, I'm Ján. I'm a software developer focused mainly on frontend development and modern web applications.</p>
+    <p>I'm a software developer focused mainly on frontend development and modern web applications.</p>
     <p>After finishing my studies I moved to Prague, where I worked at Alma Career on the product Atmoskop as a full-stack developer with a strong focus on frontend.</p>
     <p>Outside of work I enjoy learning and building things in different ways. I love swing dancing and regularly attend international festivals. I also enjoy photography, experimenting with small electronics projects using Arduino and ESP boards, and taking care of plants or growing them from seeds.</p>
   </Prose>

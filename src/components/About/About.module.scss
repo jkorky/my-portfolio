@@ -1,11 +1,12 @@
 @use '../../styles/tokens' as tokens;
 
 .About {
+  margin: tokens.$measureSpace400 0;
   text-align: center;
 }
 
 .About__photo {
-  width: 294px;
+  width: 200px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -13,10 +14,11 @@
 }
 
 .About__name {
+  font-size: tokens.$measureFontSize800;
   line-height: 0.9;
 }
 
 .About__job {
-  margin-block: -1em 2em;
-  font-size: tokens.$measureFontSize300;
+  margin-block: - tokens.$measureSpace200 tokens.$measureSpace400;
+  font-size: tokens.$measureFontSize250;
 }
