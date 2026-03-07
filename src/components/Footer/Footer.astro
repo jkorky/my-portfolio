@@ -1,0 +1,30 @@
+---
+import { Github, Instagram, Linkedin } from '@lucide/astro';
+import styles from './Footer.module.scss';
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { href: 'https://www.instagram.com/jany_korky/', label: 'Instagram', Icon: Instagram },
+  { href: 'https://www.linkedin.com/in/j%C3%A1n-korko%C5%A1-909781172/', label: 'LinkedIn', Icon: Linkedin },
+  { href: 'https://github.com/jkorky', label: 'GitHub', Icon: Github }
+];
+---
+
+<footer class={styles.Footer}>
+  <div class={styles.Footer__social}>
+    {socialLinks.map(({ href, label, Icon }) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
+      >
+        <Icon size={24} />
+      </a>
+    ))}
+  </div>
+  <p class={styles.Footer__copyright}>
+    © {currentYear} Ján Korkoš
+  </p>
+</footer>

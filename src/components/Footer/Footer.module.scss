@@ -1,0 +1,36 @@
+@use '../../styles/tokens' as tokens;
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: tokens.$measureSpace200;
+  padding: tokens.$measureSpace400 0 tokens.$measureSpace300;
+  margin-top: tokens.$measureSpace500;
+  border-top: 1px solid tokens.$colorGrey100;
+}
+
+.Footer__social {
+  display: flex;
+  gap: tokens.$measureSpace300;
+
+  a {
+    color: tokens.$colorTextDefault;
+    text-decoration: none;
+
+    &:hover {
+      color: tokens.$colorGrey200;
+    }
+
+    &:active {
+      color: tokens.$colorGrey300;
+    }
+  }
+}
+
+.Footer__copyright {
+  margin: 0;
+  font-size: tokens.$measureFontSize200;
+  font-weight: 100;
+  color: tokens.$colorGrey200;
+}

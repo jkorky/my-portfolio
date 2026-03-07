@@ -11,11 +11,12 @@ import styles from './About.module.scss';
     src={meImage}
     width={294}
     height={294}
-    alt="Photo of Ján Korkoš"
+    alt="Ján Korkoš"
     class={styles.About__photo}
+    loading="eager"
   />
   <Heading as="h1" class={styles.About__name} id="about-heading">Ján Korkoš</Heading>
-  <p class={styles.About__job}>Frontend developer</p>
+  <div class={styles.About__job}>Frontend developer</div>
 
   <Prose tag="section">
     <p>Hi, I'm Ján. I'm a software developer focused mainly on frontend development and modern web applications.</p>

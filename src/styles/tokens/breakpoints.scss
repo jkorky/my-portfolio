@@ -1,4 +1,5 @@
 @use '../tokens/measures' as measures;
+@use 'sass:map';
 
 $breakpoints: (
   'mobile': measures.$measureDimensionMobile,
@@ -15,7 +16,7 @@ $containers: (
 );
 
 @mixin breakpoint-up($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
+  $value: map.get($breakpoints, $breakpoint);
   
   @if $value != null {
     @media (min-width: $value) {
@@ -28,7 +29,7 @@ $containers: (
 
 // Helper function to get container max-width
 @function container($size) {
-  $value: map-get($containers, $size);
+  $value: map.get($containers, $size);
   
   @if $value != null {
     @return $value;
