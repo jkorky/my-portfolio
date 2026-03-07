@@ -496,6 +496,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
+"@iconify-json/lucide@^1.2.96":
+  version "1.2.96"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.96.tgz#0c42b4f452c7465c2efc4a9cbec3e574d57f5d61"
+  integrity sha512-EICTusj67lvSmEaH/Lhe68ZyzcgfcPNpY00exAOkoo+z2fnLeNy31mdE3E/4/q8WjzZrICAZDxY3d6j7LzkgNA==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/tools@^4.0.5":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@iconify/tools/-/tools-4.2.0.tgz#ae9ebe4d806c2e6af95ae249c855c2665013488f"
@@ -511,7 +518,7 @@
     svgo "^3.3.2"
     tar "^7.5.2"
 
-"@iconify/types@^2.0.0":
+"@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
@@ -688,11 +695,6 @@
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz#6912b00d2c631c0d15ce1a7ab57cd657f2a8f8ba"
   integrity sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==
-
-"@lucide/astro@^0.576.0":
-  version "0.576.0"
-  resolved "https://registry.yarnpkg.com/@lucide/astro/-/astro-0.576.0.tgz#1d8857bee44913162820e981ed46e35f5993c235"
-  integrity sha512-TX+ySPdQ21GCdzieyasvcERPmwZwQNUoh/5nqtNwA4pLpuwp9/NRMPqPcCSXYZq0oG97SKasQ29H+FLxcRuj1Q==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
