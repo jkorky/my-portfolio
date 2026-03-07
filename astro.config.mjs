@@ -7,5 +7,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://jkorky.github.io',
   base: '/my-portfolio',
-  integrations: [icon()],
+  integrations: [icon({
+    iconDir: 'src/assets/icons',
+  })],
 });
