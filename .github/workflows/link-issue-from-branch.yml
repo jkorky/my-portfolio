@@ -1,0 +1,38 @@
+name: Link PR to Issue from Branch
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  link-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Extract issue number from branch
+        id: extract
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          ISSUE=$(echo "$BRANCH" | grep -oE 'MP-[0-9]+' | head -1 | grep -oE '[0-9]+')
+          echo "issue=$ISSUE" >> $GITHUB_OUTPUT
+
+      - name: Update PR description
+        if: steps.extract.outputs.issue != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = "${{ steps.extract.outputs.issue }}"
+            const pr = context.payload.pull_request
+            const body = pr.body || ""
+
+            if (!body.includes(`#${issue}`)) {
+              const newBody = body + `\n\nResolves #${issue}`
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                body: newBody
+              })
+            }
