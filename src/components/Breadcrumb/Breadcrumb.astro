@@ -21,9 +21,8 @@ const iconSize = 14;
     items.map((item, index) => (
       <>
         {index > 0 && (
-          <span class={styles.separator} aria-hidden="true">
+          <span class={styles.Breadcrumb__separator} aria-hidden="true">
             <Icon
-              class={styles.separatorIcon}
               name="lucide:chevron-right"
               width={iconSize}
               height={iconSize}
@@ -31,11 +30,11 @@ const iconSize = 14;
           </span>
         )}
         {item.href ? (
-          <a class={styles.link} href={item.href}>
+          <a class={styles.Breadcrumb__link} href={item.href}>
             {item.label}
           </a>
         ) : (
-          <span class={styles.current} aria-current="page">
+          <span class={styles.Breadcrumb__current} aria-current="page">
             {item.label}
           </span>
         )}
