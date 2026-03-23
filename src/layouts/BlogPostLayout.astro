@@ -1,0 +1,31 @@
+---
+import Breadcrumb from '../components/Breadcrumb/Breadcrumb.astro';
+import BaseLayout from './BaseLayout.astro';
+import { blogCategoryPath, withBaseUrl } from '../lib/blog';
+
+interface Props {
+  title: string;
+  description?: string;
+  category?: string;
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const { title, description, category } = Astro.props;
+
+const siteName = 'Ján Korkoš';
+const pageTitle = `${title} | ${siteName}`;
+
+const breadcrumbItems = [
+  { label: 'Home', href: withBaseUrl(baseUrl, '/') },
+  { label: 'Blog', href: withBaseUrl(baseUrl, '/blog') },
+  ...(category
+    ? [{ label: category, href: withBaseUrl(baseUrl, blogCategoryPath(category)) }]
+    : []),
+  { label: title }
+];
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <Breadcrumb items={breadcrumbItems} />
+  <slot />
+</BaseLayout>

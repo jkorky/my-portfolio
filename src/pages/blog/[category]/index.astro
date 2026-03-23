@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import Breadcrumb from '../../../components/Breadcrumb/Breadcrumb.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  type BlogCollectionEntry,
+  blogPostPath,
+  getBlogPostFileSlug,
+  getCategoryIndexStaticPaths,
+  withBaseUrl
+} from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return getCategoryIndexStaticPaths(blogEntries);
+}
+
+interface Props {
+  postsInCategory: BlogCollectionEntry[];
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const siteName = 'Ján Korkoš';
+const currentCategory = String(Astro.params.category);
+const { postsInCategory } = Astro.props;
+
+const breadcrumbItems = [
+  { label: 'Home', href: withBaseUrl(baseUrl, '/') },
+  { label: 'Blog', href: withBaseUrl(baseUrl, '/blog') },
+  { label: currentCategory }
+];
+---
+
+<BaseLayout title={`${currentCategory} | Blog | ${siteName}`}>
+  <Breadcrumb items={breadcrumbItems} />
+  <h2>Category: {currentCategory}</h2>
+  {
+    postsInCategory.length === 0 ? (
+      <p>No posts in this category yet.</p>
+    ) : (
+      <ul>
+        {postsInCategory.map((postEntry) => {
+          const postFileSlug = getBlogPostFileSlug(postEntry);
+          const href = withBaseUrl(
+            baseUrl,
+            blogPostPath(postEntry.data.category, postFileSlug)
+          );
+          return (
+            <li>
+              <a href={href}>{postEntry.data.title}</a>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+</BaseLayout>

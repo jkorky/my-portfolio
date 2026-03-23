@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+import styles from './Breadcrumb.module.scss';
+
+interface CrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: CrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const iconSize = 14;
+---
+
+<nav class={styles.Breadcrumb} aria-label="Breadcrumb">
+  {
+    items.map((item, index) => (
+      <>
+        {index > 0 && (
+          <span class={styles.separator} aria-hidden="true">
+            <Icon
+              class={styles.separatorIcon}
+              name="lucide:chevron-right"
+              width={iconSize}
+              height={iconSize}
+            />
+          </span>
+        )}
+        {item.href ? (
+          <a class={styles.link} href={item.href}>
+            {item.label}
+          </a>
+        ) : (
+          <span class={styles.current} aria-current="page">
+            {item.label}
+          </span>
+        )}
+      </>
+    ))
+  }
+</nav>

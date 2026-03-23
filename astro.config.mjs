@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [icon({
     iconDir: 'src/assets/icons',
     include: {
-      lucide: ["instagram", "linkedin", "github"],
+      lucide: ["instagram", "linkedin", "github", "chevron-right"],
     },
   })],
 });

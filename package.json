@@ -7,11 +7,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint . --ext .astro,.js,.jsx,.ts,.tsx",
+    "lint:eslint": "eslint . --ext .astro,.js,.jsx,.ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "lint": "yarn lint:eslint && yarn typecheck && yarn astro check",
     "lint:fix": "eslint . --ext .astro,.js,.jsx,.ts,.tsx --fix",
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.8",
     "astro": "5.16.6",
     "astro-icon": "^1.1.5"
   },

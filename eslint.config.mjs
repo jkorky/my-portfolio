@@ -1,9 +1,20 @@
 import js from '@eslint/js';
 import eslintPluginAstro from 'eslint-plugin-astro';
+import tsParser from '@typescript-eslint/parser';
 
 export default [
   js.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      }
+    }
+  },
   {
     rules: {
       'indent': ['error', 2, {

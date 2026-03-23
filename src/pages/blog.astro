@@ -1,18 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
-const { Content } = await import('../test/test.md');
+import { getCollection } from 'astro:content';
+import Breadcrumb from '../components/Breadcrumb/Breadcrumb.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  blogCategoryPath,
+  uniqueSortedCategoryNames,
+  withBaseUrl
+} from '../lib/blog';
+
+const baseUrl = import.meta.env.BASE_URL;
+const siteName = 'Ján Korkoš';
+
+const blogEntries = await getCollection('blog');
+const categoryNames = uniqueSortedCategoryNames(blogEntries);
+
+const breadcrumbItems = [
+  { label: 'Home', href: withBaseUrl(baseUrl, '/') },
+  { label: 'Blog' }
+];
 ---
 
-<Layout title="Blog | Ján Korkoš">
-  <body>
-    <h2>Blog</h2>
-    <p>This is the blog page. It will contain a list of all the blog posts.</p>
-    <ul>
-      <li><a href=`${base}/posts/post-x`>Post 1</a></li>
-      <li><a href=`${base}/posts/post-y`>Post 2</a></li>
-      <li><a href=`${base}/posts/post-z`>Post 3</a></li>
-    </ul>
-    <Content />
-  </body>
-</Layout>
+<BaseLayout title={`Blog | ${siteName}`}>
+  <Breadcrumb items={breadcrumbItems} />
+  <h2>Blog</h2>
+  <p>Browse by category.</p>
+  {
+    categoryNames.length === 0 ? (
+      <p>No categories yet.</p>
+    ) : (
+      <ul>
+        {categoryNames.map((categoryName) => (
+          <li>
+            <a href={withBaseUrl(baseUrl, blogCategoryPath(categoryName))}>{categoryName}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</BaseLayout>
