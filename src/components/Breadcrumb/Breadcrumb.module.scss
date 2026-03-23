@@ -6,34 +6,24 @@
   align-items: center;
   gap: tokens.$measureSpace50;
   font-size: tokens.$measureFontSizeBodySmall;
-}
 
-.link {
-  color: tokens.$colorTextMuted;
-  text-decoration: none;
+  &__link {
+    color: tokens.$colorTextMuted;
+    text-decoration: none;
 
-  &:hover,
-  &:active {
+    &:hover,
+    &:active {
+      color: tokens.$colorTextDefault;
+    }
+  }
+
+  &__current {
     color: tokens.$colorTextDefault;
   }
 
-  &:focus-visible {
-    color: tokens.$colorTextDefault;
-    outline: 2px solid tokens.$colorGrey300;
-    outline-offset: 2px;
+  &__separator {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: tokens.$colorTextMuted;
   }
-}
-
-.current {
-  color: tokens.$colorTextDefault;
-}
-
-.separator {
-  display: inline-flex;
-  flex-shrink: 0;
-  color: tokens.$colorTextMuted;
-}
-
-.separatorIcon {
-  display: block;
 }
